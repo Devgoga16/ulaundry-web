@@ -1,0 +1,158 @@
+/*
+ * Tokens de diseño de uLaundry. Dirección "Tendedero": aire y ropa limpia.
+ * Fondo celeste muy claro, azul petróleo para la acción y coral para lo que
+ * pide atención (órdenes listas, saldos por cobrar).
+ *
+ * - `--teal*` es el color de ACCIÓN (petróleo): rellenos, bordes y foco;
+ *   `--teal-ink` es ese color como texto. `--on-teal`: texto sobre el relleno.
+ * - `--pop*` es el color de ATENCIÓN (coral). Se usa poco, a propósito.
+ * - `--grad` es el relleno del botón principal; `--on-grad`, su texto.
+ * - Todos los pares de texto cumplen WCAG AA (4.5:1), en claro y oscuro.
+ */
+:root {
+  color-scheme: light;
+
+  --bg: #eef6f9;
+  --surface: #ffffff;
+  --surface-2: #e7f2f6;
+  --ink: #0f2b3a;
+  --ink-2: #2c4857;
+  --muted: #4f6b79;
+  --line: #d5e5ec;
+  --line-strong: #b9d0da;
+
+  --brand: #06607a;
+  --brand-soft: #dcedf3;
+  --teal: #087a9a;
+  --teal-ink: #06607a;
+  --teal-soft: #e2f0f5;
+  --teal-line: #9fcbd9;
+  --on-teal: #ffffff;
+  --pop: #ff6b4a;
+  --pop-ink: #b3361a;
+  --pop-soft: #ffece6;
+  --pop-line: #ffb8a6;
+  --on-pop: #2b0a02;
+  --grad: linear-gradient(160deg, #0a84a6 0%, #087a9a 50%, #066a86 100%);
+  --grad-text: linear-gradient(100deg, #06607a 15%, #b3361a 95%);
+  --on-grad: #ffffff;
+
+  /* Logo: "u" coral + "Laundry" en tinta. */
+  --logo-accent: #ff6b4a;
+  --logo-ink: #0f2b3a;
+
+  --ok: #1d7045;
+  --ok-bg: #e2f4ea;
+  --warn: #9a4a12;
+  --warn-bg: #fdeede;
+  --bad: #b42318;
+  --bad-bg: #fde9e7;
+  --info: #06607a;
+  --info-bg: #dcedf3;
+  --off: #55697a;
+  --off-bg: #e9f0f3;
+  --done: #4a6170;
+  --done-bg: #e4ecf0;
+
+  --overlay: rgb(7 29 39 / 0.45);
+  --shadow: 0 1px 2px rgb(15 43 58 / 0.05), 0 8px 24px rgb(15 43 58 / 0.07);
+  --shadow-pop: 0 20px 60px rgb(7 29 39 / 0.25);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+
+    --bg: #071d27;
+    --surface: #0e2c39;
+    --surface-2: #143a4a;
+    --ink: #e6f4f9;
+    --ink-2: #bcd6e0;
+    --muted: #93b3c0;
+    --line: #1d4455;
+    --line-strong: #2c5a6e;
+
+    --brand: #7ad9f2;
+    --brand-soft: #143a4a;
+    --teal: #3cc1e3;
+    --teal-ink: #7ad9f2;
+    --teal-soft: #123848;
+    --teal-line: #2a6f86;
+    --on-teal: #04222c;
+    --pop: #ff8a6e;
+    --pop-ink: #ffa38c;
+    --pop-soft: #3d1f17;
+    --pop-line: #8a4636;
+    --on-pop: #2b0a02;
+    --grad: linear-gradient(160deg, #4fcdec 0%, #3cc1e3 50%, #2fb2d4 100%);
+    --grad-text: linear-gradient(100deg, #e6f4f9 10%, #ff8a6e 90%);
+    --on-grad: #04222c;
+    --logo-accent: #ff8a6e;
+    --logo-ink: #e6f4f9;
+
+    --ok: #7fd9a6;
+    --ok-bg: #12382a;
+    --warn: #f5b27c;
+    --warn-bg: #3a2714;
+    --bad: #ff9b8f;
+    --bad-bg: #401d1a;
+    --info: #7ad9f2;
+    --info-bg: #143a4a;
+    --off: #a3bcc7;
+    --off-bg: #173545;
+    --done: #b0c8d2;
+    --done-bg: #183a4a;
+
+    --overlay: rgb(2 12 17 / 0.65);
+    --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px rgb(0 0 0 / 0.35);
+    --shadow-pop: 0 20px 60px rgb(0 0 0 / 0.6);
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --bg: #071d27;
+  --surface: #0e2c39;
+  --surface-2: #143a4a;
+  --ink: #e6f4f9;
+  --ink-2: #bcd6e0;
+  --muted: #93b3c0;
+  --line: #1d4455;
+  --line-strong: #2c5a6e;
+
+  --brand: #7ad9f2;
+  --brand-soft: #143a4a;
+  --teal: #3cc1e3;
+  --teal-ink: #7ad9f2;
+  --teal-soft: #123848;
+  --teal-line: #2a6f86;
+  --on-teal: #04222c;
+  --pop: #ff8a6e;
+  --pop-ink: #ffa38c;
+  --pop-soft: #3d1f17;
+  --pop-line: #8a4636;
+  --on-pop: #2b0a02;
+  --grad: linear-gradient(160deg, #4fcdec 0%, #3cc1e3 50%, #2fb2d4 100%);
+  --grad-text: linear-gradient(100deg, #e6f4f9 10%, #ff8a6e 90%);
+  --on-grad: #04222c;
+  --logo-accent: #ff8a6e;
+  --logo-ink: #e6f4f9;
+
+  --ok: #7fd9a6;
+  --ok-bg: #12382a;
+  --warn: #f5b27c;
+  --warn-bg: #3a2714;
+  --bad: #ff9b8f;
+  --bad-bg: #401d1a;
+  --info: #7ad9f2;
+  --info-bg: #143a4a;
+  --off: #a3bcc7;
+  --off-bg: #173545;
+  --done: #b0c8d2;
+  --done-bg: #183a4a;
+
+  --overlay: rgb(2 12 17 / 0.65);
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px rgb(0 0 0 / 0.35);
+  --shadow-pop: 0 20px 60px rgb(0 0 0 / 0.6);
+}

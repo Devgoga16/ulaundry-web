@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es-PE">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#087a9a" />
+    <title>uLaundry · Cada orden, en su sitio.</title>
+    <meta name="description" content="Software para lavanderías: órdenes con ticket, avisos por WhatsApp, cobros con Yape y Plin, caja del día y reportes." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="uLaundry" />
+    <meta property="og:title" content="uLaundry · Cada orden, en su sitio." />
+    <meta property="og:description" content="Recibe, lava, avisa y entrega sin perder una sola prenda. Prueba 30 días gratis." />
+    <meta property="og:locale" content="es_PE" />
+    <meta name="twitter:card" content="summary" />
+    <script>
+      // Aplica el tema antes de pintar para evitar parpadeo.
+      try {
+        var t = localStorage.getItem('ulaundry-theme');
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
